@@ -22,4 +22,9 @@
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 </script>
 
+<nav>
+	<a href="/photoapp">Photo App</a>
+	<a href="/">Hem</a>
+</nav>
+
 <slot />
