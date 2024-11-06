@@ -38,6 +38,7 @@
         }
     .image-wrapper:active { 
             transform: scale(0.9); 
+            transition: 200ms transform;
         }
     .photos{
             display: flex;
