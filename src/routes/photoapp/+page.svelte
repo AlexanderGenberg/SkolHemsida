@@ -45,4 +45,10 @@
             background-color: gainsboro;
             border-radius: 10px;
         }
+    h1{
+        text-align: center;
+        font-size: 20px;
+        margin: 20px;
+        color: red;
+    }
 </style>
