@@ -2,15 +2,10 @@
     let name = ""
     let password = ""
 
-    let loginTry = {username: name, password: password}
-
-    function handleSubmit(){
-        alert(email +", "+ password)
-    }
     import { base } from '$app/paths';
 
     import {users_store} from "$lib/user";
-    let users = [];
+    let users = []
 
     import { onMount } from 'svelte';
     onMount(() => {
@@ -18,12 +13,17 @@
         if($users_store.length > 2){
             users = JSON.parse($users_store);
         }
+        else{
+            users = []
+        }
     });
 
     function verifyLogin(){
-        onMount()
-        loginTry = {username: name, password: password}
-        if (users.filter(user => user.username == loginTry.username).length>0){
+        let loginTry = {username: name, password: password}
+        if (loginTry.username == "" || loginTry.password == "") {
+            alert("Please enter your credentials")
+        }
+        else if (users.filter(user => user.username == loginTry.username).length>0){
             if (users.filter(user => user.password == loginTry.password).length>0){
                 alert("Login Success")
             }
@@ -37,7 +37,7 @@
 <main>
     <div class="container">
         <h1>Inloggning</h1>
-        <form on:submit|preventDefault={handleSubmit} on:submit|preventDefault={verifyLogin}>
+        <form on:submit|preventDefault={verifyLogin}>
             
             <label for="name">Namn:</label>
             <input type="text" id="name" bind:value={name}>
@@ -45,7 +45,7 @@
             <label for="password">Lösenord:</label>
             <input type="password" id="password" bind:value={password}>
 
-            <input type="Submit" value="Logga in" style="display:block; align-self:center;">
+            <input type="Submit" value="Logga in" style="display:block;">
         </form>
         <a style="display:block; align-self: center;" href="{base}/register">Har du inget konto? Registrera</a>
     </div>

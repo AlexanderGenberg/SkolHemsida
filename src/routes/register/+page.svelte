@@ -6,19 +6,11 @@
 
     let colors = [{namn: "Blå", value: "blue"}, {namn: "Röd", value: "red"}, {namn: "Grön", value: "green"}, {namn: "Gul", value: "yellow"}, {namn: "Orange", value: "orange"}]
 
-    function handleSubmit(){
-        alert(name + ", " + password + ", " + color)
-    }
+	import { dev } from '$app/environment';
     import { base } from '$app/paths';
-
     
     import {users_store} from "$lib/user";
     let users = [];
-
-    let new_user = {username: name, password: password, favorite_color: color}
-
-    users = [...users, new_user];
-    $users_store = JSON.stringify(users);
 
     
     import { onMount } from 'svelte';
@@ -27,16 +19,17 @@
         if($users_store.length > 2){
             users = JSON.parse($users_store);
         }
+       
     });
-    
+
     function checkUsers(){
-        new_user = {username: name, password: password, favorite_color: color}
+        let new_user = {username: name, password: password, favorite_color: color}
         if (users.filter(user => user.username == new_user.username).length>0){
             alert("användarnamn finns redan")
         }
         else {
+            alert("Välkommen " +name + ", " + password + ", " + color)
             users = [...users, new_user];
-            console.log(users)
             $users_store = JSON.stringify(users);
         }
     }
@@ -45,7 +38,7 @@
 <main>
     <div class="container">
         <h1>Registrering</h1>
-        <form on:submit|preventDefault={handleSubmit} on:submit|preventDefault={checkUsers}>
+        <form on:submit|preventDefault={checkUsers}>
             <div style="width: 100px; height: 100px; border-radius: 50%; overflow:hidden; background-color:{color};"></div>
             <label for="name">Namn:</label>
             <input type="text" id="name" bind:value={name}>
