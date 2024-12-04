@@ -39,7 +39,7 @@
     <div class="container">
         <h1>Registrering</h1>
         <form on:submit|preventDefault={checkUsers}>
-            <div style="width: 100px; height: 100px; border-radius: 50%; overflow:hidden; background-color:{color};"></div>
+            <div style="width: 100px; height: 100px; border-radius: 50%; overflow:hidden; background-color:{color}; justify-self:center ;"></div>
             <label for="name">Namn:</label>
             <input type="text" id="name" bind:value={name}>
 
@@ -73,7 +73,7 @@
     }
 
     .container{
-        border: solid 5px rosybrown;
+        border: solid 5px black;
         border-radius: 10px;
         width: 35%;
         height: 80%;

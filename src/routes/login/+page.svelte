@@ -64,7 +64,7 @@
     }
 
     .container{
-        border: solid 5px rosybrown;
+        border: solid 5px black;
         border-radius: 10px;
         width: 35%;
         height: 80%;
