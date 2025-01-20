@@ -153,15 +153,13 @@
         font-size: 30px;
     }
                           
-    .card img{
-        backface-visibility: hidden;
- 
-    }
     .card {
         border:solid 1px black;
+        backface-visibility: hidden;
         transform-style: preserve-3d;
         transition: transform 0.5s;
     }
+    
     .card:not(.flipped) :hover {
         transform: scale(1.1);
     }
