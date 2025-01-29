@@ -31,6 +31,7 @@
 	<a href="{base}/memory">Memory</a>
 	<a href="{base}/chat">ChatBot</a>
 	<a href="{base}/search">Search</a>
+	<a href="{base}/user-login">user-login</a>
 </nav>
 
 <style>
