@@ -32,6 +32,7 @@
 	<a href="{base}/chat">ChatBot</a>
 	<a href="{base}/search">Search</a>
 	<a href="{base}/user-login">user-login</a>
+	<a href="{base}/runner">Runner</a>
 </nav>
 
 <style>
